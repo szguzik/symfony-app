@@ -1,16 +1,10 @@
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::Docker::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-//Polecenie do pokazywania listy kontenerów
-docker ps
-// Wejście do kontenera z uzyciem powloki sh na podstawie id kontenera (np: cd0cb3f47931)
-docker exec -it cd0cb3f47931 sh
-
+docker ps - pokazuje liste kontenerow
+docker exec -it cd0cb3f47931 sh - Wejście do kontenera z uzyciem powloki sh na podstawie id kontenera (np: cd0cb3f47931)
 ctrl+D - wyjscie z terminala dockerowego
-
-// Zatrzymanie działających obrazów
-docker-compose down
+docker-compose down - Zatrzymanie działających obrazów
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::Symfony::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -23,17 +17,13 @@ bin/console doctrine:migrations:status - status migracji baz itd
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::Composer::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-// Symfony Maker pomaga tworzyć puste polecenia, kontrolery, klasy formularzy,
-// testy i nie tylko, dzięki czemu możesz zapomnieć o pisaniu szablonowego kodu.
-composer require --dev symfony/maker-bundle
-
-// Paczka, ktora zawiera wszystkie rzeczy potrzebne do pllaczenia z baza
-composer require orm
+composer require --dev symfony/maker-bundle - pomaga tworzyć puste polecenia, kontrolery, klasy formularzy,testy
+composer require orm -zawiera wszystkie rzeczy potrzebne do polaczenia z baza
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::POSTGRESQL::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 docker exec -it e7266d35d33b sh - za pomoca id kontenera np. e7266d35d33b trzeba wejsc na kontener postgresa
-psql -Uapp
+psql -Uapp - polaczenie z baza danych
 \l - lista tabel
 \d nazwa_tabeli - "opis" tabeli (jakie kolumny itd)
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
