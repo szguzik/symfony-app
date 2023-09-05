@@ -1,4 +1,7 @@
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::Docker::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 //Polecenie do pokazywania listy kontenerów
 docker ps
 // Wejście do kontenera z uzyciem powloki sh na podstawie id kontenera (np: cd0cb3f47931)
@@ -8,28 +11,32 @@ ctrl+D - wyjscie z terminala dockerowego
 
 // Zatrzymanie działających obrazów
 docker-compose down
-
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::Symfony::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 bin/console - wyswietla listw wszystkich komend, ktore mozemy uzyc
 bin/console make:entity - tworzenie encji
 bin/console make:migration - tworzenie migracji
 bin/console doctrine:migrations:migrate - puszczeanie migracji - uwaga jest ostrzrzenie ze mozesz straici dane bo leci migracja
 bin/console doctrine:schema:create - czy nasza baza danych juz jest - nie wykonuj tego polecenia na srodowisku produkcyjnym
-
+bin/console doctrine:migrations:status - status migracji baz itd
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::Composer::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 // Symfony Maker pomaga tworzyć puste polecenia, kontrolery, klasy formularzy,
 // testy i nie tylko, dzięki czemu możesz zapomnieć o pisaniu szablonowego kodu.
 composer require --dev symfony/maker-bundle
 
 // Paczka, ktora zawiera wszystkie rzeczy potrzebne do pllaczenia z baza
 composer require orm
-
-
-::sql postgres::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::POSTGRESQL::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 docker exec -it e7266d35d33b sh - za pomoca id kontenera np. e7266d35d33b trzeba wejsc na kontener postgresa
 psql -Uapp
 \l - lista tabel
 \d nazwa_tabeli - "opis" tabeli (jakie kolumny itd)
-
-::info::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::INFO::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 encje - reprezentują tabele po stronie kodu!
