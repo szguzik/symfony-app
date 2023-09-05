@@ -14,11 +14,16 @@ bin/console make:migration - tworzenie migracji
 bin/console doctrine:migrations:migrate - puszczeanie migracji - uwaga jest ostrzrzenie ze mozesz straici dane bo leci migracja
 bin/console doctrine:schema:create - czy nasza baza danych juz jest - nie wykonuj tego polecenia na srodowisku produkcyjnym
 bin/console doctrine:migrations:status - status migracji baz itd
+bin/console doctrine:fixtures:load - zapisuje dane z fakera kasujac to co jest w bazie (zobacz fakera w sekcji composer)
+bin/console doctrine:fixtures:load --append - zapisuje dane z fakera ale zachowuje istniejace (zobacz fakera w sekcji composer)
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::Composer::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 composer require --dev symfony/maker-bundle - pomaga tworzyć puste polecenia, kontrolery, klasy formularzy,testy
 composer require orm -zawiera wszystkie rzeczy potrzebne do polaczenia z baza
+composer require --dev orm-fixtures - faker danych
+composer require --dev symfony/profiler-pack
+composer require debug - narzędzia do zarządzania błędami i ułatwiają (deprecated)
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::POSTGRESQL::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
