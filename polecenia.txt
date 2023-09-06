@@ -26,6 +26,17 @@ composer require --dev symfony/profiler-pack - pasek symfony (czarny na dole)
 composer require debug - narzędzia do zarządzania błędami i ułatwiają
 composer require twig/twig - system szablonów
 
+// Paczki przestarzale - zamiast tej paczki uzyj anotacji z route
+composer require sensio/framework-extra-bundle - zamiana parametrów na encje - deprecated - nie uzywac
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Przykład - umiesc kod w odpowiednich miejscach w klasie i wywolaj getery odpowiednie
+use Symfony\Component\Routing\Annotation\Route;
+    #[Route('/article/{article}', 'blog-article')]
+    public function showArticle(Article $article): Response {
+        dd($article);
+        return new Response($article->getContent());
+    }
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::POSTGRESQL::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -33,6 +44,14 @@ docker exec -it e7266d35d33b sh - za pomoca id kontenera np. e7266d35d33b trzeba
 psql -Uapp - polaczenie z baza danych
 \l - lista tabel
 \d nazwa_tabeli - "opis" tabeli (jakie kolumny itd)
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::TWIG::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+{#  #} - Zapis komentarza
+{{  }} - Tak zapisujemy wyswietlanie
+{{ dump(articles) }} - kod wyświetla wszystko z articles
+{{ dump() }} - kod wyświetla wszystko do czego twig ma dostęp
+{%  %} - Tak zapisujemy wykonywanie jakiś działań np. pętle
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::INFO::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::

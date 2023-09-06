@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Article;
 use App\Repository\ArticleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,8 +18,8 @@ class BlogController extends AbstractController
 
     }
 
-    #[Route('/articles', 'blog-article')]
-    public function mainPage(): Response
+    #[Route('/articles', 'blog-articles')]
+    public function showArticles(): Response
     {
         $articles = $this->articleRepository->findAll();
         // dane widac w profiler
@@ -32,5 +33,12 @@ class BlogController extends AbstractController
         ];
 
         return $this->render('articles.html.twig', $parameters);
+    }
+
+    #[Route('/article/{article}', 'blog-article')]
+    public function showArticle(Article $article): Response {
+//        dd($article);
+//        return new Response($this->articleRepository->find($articleId));
+        return new Response($article->getContent());
     }
 }

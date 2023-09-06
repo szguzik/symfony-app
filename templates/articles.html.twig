@@ -1,30 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Artykuły</title>
-</head>
-<body>
+{% extends 'base.html.twig' %}
+{% block title %}
+    Wszystkie artykuły
+{% endblock %}
+{% block body %}
     <h1>Artykuły</h1>
-
     <div>
-        {# Tak zapisujemy wyswietlanie #}
-        {# {{  }} #}
-        {# Poniższy kod wyświetla wszystko z articles #}
-        {# {{ dump(articles) }}#}
-        {# Poniższy kod wyświetla wszystko do czego twig ma dostęp #}
-        {# {{ dump() }}#}
-        {# Tak zapisujemy wykonywanie jakiś działań np. pętle#}
-        {# {%  %}#}
 
         {% for article in articles %}
-{#            {{ dump(article) }}#}
+{#            {{ dump(article) }} #}
             <div>
-                <span><b>Id Artykułu:</b> {{ article.id }}</span><br>
-                <span><b>Tytuł:</b> {{ article.title }}</span><br>
-                <span><b>Zawartość:</b> {{ article.content }}</span><br>
+                Ograniczenie ilości znaków
+                <a href="/article/{{ article.id }}" target="_blank">
+                    <h2>{{ article.title [:30] }}</h2><br>
+                    <span>{{ article.content [:150] | capitalize }}</span>
+                </a>
             </div>
-            <br>
+            <br><br>
         {% endfor %}
     </div>
-</body>
-</html>
+{% endblock %}
+
