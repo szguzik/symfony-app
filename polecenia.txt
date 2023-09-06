@@ -24,6 +24,8 @@ composer require orm -zawiera wszystkie rzeczy potrzebne do polaczenia z baza
 composer require --dev orm-fixtures - faker danych
 composer require --dev symfony/profiler-pack - pasek symfony (czarny na dole)
 composer require debug - narzędzia do zarządzania błędami i ułatwiają
+composer require twig/twig - system szablonów
+
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 ::POSTGRESQL::
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::

@@ -22,9 +22,15 @@ class BlogController extends AbstractController
     {
         $articles = $this->articleRepository->findAll();
         // dane widac w profiler
-        dump($articles);
+        // dump($articles);
         // dane widac na froncie
-//        dd($articles);
-        return new Response('test');
+        // dd($articles);
+        // return new Response('test');
+
+        $parameters = [
+            'articles' => $articles
+        ];
+
+        return $this->render('articles.html.twig', $parameters);
     }
 }

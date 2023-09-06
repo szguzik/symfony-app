@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Artykuły</title>
+</head>
+<body>
+    <h1>Artykuły</h1>
+
+    <div>
+        {# Tak zapisujemy wyswietlanie #}
+        {# {{  }} #}
+        {# Poniższy kod wyświetla wszystko z articles #}
+        {# {{ dump(articles) }}#}
+        {# Poniższy kod wyświetla wszystko do czego twig ma dostęp #}
+        {# {{ dump() }}#}
+        {# Tak zapisujemy wykonywanie jakiś działań np. pętle#}
+        {# {%  %}#}
+
+        {% for article in articles %}
+{#            {{ dump(article) }}#}
+            <div>
+                <span><b>Id Artykułu:</b> {{ article.id }}</span><br>
+                <span><b>Tytuł:</b> {{ article.title }}</span><br>
+                <span><b>Zawartość:</b> {{ article.content }}</span><br>
+            </div>
+            <br>
+        {% endfor %}
+    </div>
+</body>
+</html>
